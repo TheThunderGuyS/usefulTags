@@ -1,0 +1,33 @@
+{
+  "name": "usefultags",
+  "version": "0.0.0",
+  "description": "A tiny JavaScript library incorporating some useful template tag functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"add this command at some point\""
+  },
+  "engines": {
+    "node": ">=4.0.0",
+    "deno": ">=0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheThunderGuyS/usefulTags.git"
+  },
+  "keywords": [
+    "es6",
+    "es2015",
+    "tagged",
+    "template",
+    "literals"
+  ],
+  "author": "TheThunderGuyS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheThunderGuyS/usefulTags/issues"
+  },
+  "homepage": "https://github.com/TheThunderGuyS/usefulTags#readme",
+  "devDependencies": {
+    "eslint": "^7.12.1"
+  }
+}
