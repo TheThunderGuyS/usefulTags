@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "index.js",
+  "files": ["test.js"],
   "scripts": {
-    "test": "echo \"add this command at some point\""
+    "test": "node test"
   },
   "engines": {
     "node": ">=4.0.0",
@@ -17,9 +18,7 @@
   "keywords": [
     "es6",
     "es2015",
-    "tagged",
-    "template",
-    "literals"
+    "tagged-template-literals"
   ],
   "author": "TheThunderGuyS",
   "license": "MIT",
@@ -28,6 +27,9 @@
   },
   "homepage": "https://github.com/TheThunderGuyS/usefulTags#readme",
   "devDependencies": {
-    "eslint": "^7.12.1"
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
   }
 }

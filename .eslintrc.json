@@ -1,5 +1,6 @@
 {
-	"extends": "eslint:recommended",
+	"plugins": ["prettier"],
+    "extends": ["eslint:recommended", "plugin:prettier/recommended"],
 	"env": {
         "node": true,
         "browser": true,
@@ -11,7 +12,7 @@
 	"rules": {
 		"semi": ["error", "always"],
 		"curly": ["error", "all"],
-		"quotes": ["error", "double", {"allowTemplateLiterals": true}],
+		"quotes": ["error", "double", {"avoidEscape": true, "allowTemplateLiterals": false}],
 		"eqeqeq": ["error", "smart"],
 		"no-multi-spaces": "error",
 		"no-useless-return": "error",
