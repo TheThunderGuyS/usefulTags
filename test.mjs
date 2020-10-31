@@ -1,5 +1,11 @@
 "use strict";
-import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "./index.mjs";
+import {
+    stripIndent,
+    stripAllIndents,
+    oneLine,
+    oneLineConcatenate
+} from "./index.mjs";
+
 {
     {
         const single = stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
