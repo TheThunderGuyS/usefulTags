@@ -1,15 +1,19 @@
 {
   "name": "usefultags",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "module": "index.mjs",
-  "files": ["test.js", "index.mjs"],
+  "files": [
+    "index.mjs"
+  ],
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "build": "npx babel index.mjs --out-dir dist"
   },
   "engines": {
     "node": ">=4.0.0",
+    "iojs": ">=1.0.0",
     "deno": ">=0.1.0"
   },
   "repository": {
@@ -28,9 +32,14 @@
   },
   "homepage": "https://github.com/TheThunderGuyS/usefulTags#readme",
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-strict-mode": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "prettier": "2.1.2"
   }
 }

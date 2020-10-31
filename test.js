@@ -1,5 +1,5 @@
 "use strict";
-const usefulTags = require("./index.js");
+const usefulTags = require("./dist/index.js");
 {
     {
         const single = usefulTags.stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;

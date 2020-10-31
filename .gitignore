@@ -1,3 +1,5 @@
+# Older node versions located in cwd for testing
+*.exe
 # Node gitignore
 # Logs
 logs
