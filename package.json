@@ -1,9 +1,10 @@
 {
   "name": "usefultags",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "index.js",
-  "files": ["test.js"],
+  "module": "index.mjs",
+  "files": ["test.js", "index.mjs"],
   "scripts": {
     "test": "node test"
   },
