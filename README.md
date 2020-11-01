@@ -7,7 +7,7 @@
 ## Work in progress.
 
 There is currently support for all versions of Node.js/iojs, using both CommonJS and ESModules. It can be installed with `npm i usefultags`.
-It also supports any version of Deno and ES6 browsers, include `https://deno.land/x/usefultags/index.js` in your script.
+It also supports any version of Deno, include `https://deno.land/x/usefultags/index.js` in your script. For ES6 browsers, include `https://unpkg.com/usefultags@latest/index.js`
 ES3 browser support is coming soon.
 
 Being in early development, the functions are subject to change. They currently should be used as either a template tag or regular function, and simply accept the string as an argument.
