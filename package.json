@@ -1,6 +1,6 @@
 {
   "name": "usefultags",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "dist/index.js",
   "module": "index.mjs",
@@ -12,9 +12,9 @@
     "build": "npx babel index.mjs --out-dir dist"
   },
   "engines": {
-    "node": ">=4.0.0",
-    "iojs": ">=1.0.0",
-    "deno": ">=0.1.0"
+    "node": "*",
+    "iojs": "*",
+    "deno": "*"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,9 @@
 "use strict";
 //Get template literals and add back to string
 function restoreTemplates(strings, ...values) {
+    if (typeof strings !== "object") {
+        return strings;
+    }
     let string = "";
     strings.forEach((str, i) => {
         string += str + (values[i] || "");

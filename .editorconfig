@@ -8,7 +8,7 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[test.*]
+[{test*,*.md}]
 trim_trailing_whitespace = false
 
 [{package.json,package-lock.json}]
