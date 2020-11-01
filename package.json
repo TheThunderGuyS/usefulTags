@@ -1,6 +1,6 @@
 {
   "name": "usefultags",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "dist/index.cjs",
   "module": "index.js",
