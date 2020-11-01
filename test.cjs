@@ -1,15 +1,9 @@
 "use strict";
-import {
-    stripIndent,
-    stripAllIndents,
-    oneLine,
-    oneLineConcatenate
-} from "./index.mjs";
-
+const usefulTags = require("./dist/index.cjs");
 {
     {
-        const single = stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = stripIndent`
+        const single = usefulTags.stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = usefulTags.stripIndent`
         This
         is
         ${"a"}
@@ -24,8 +18,8 @@ import {
     }
 
     {
-        const single = stripAllIndents`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = stripAllIndents`This
+        const single = usefulTags.stripAllIndents`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = usefulTags.stripAllIndents`This
     is
          ${"a"}
       multi-line
@@ -39,8 +33,8 @@ import {
     }
 
     {
-        const single = oneLine`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = oneLine`
+        const single = usefulTags.oneLine`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = usefulTags.oneLine`
         This
         is
         ${"a"}
@@ -55,8 +49,8 @@ import {
     }
 
     {
-        const single = oneLineConcatenate`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = oneLineConcatenate`
+        const single = usefulTags.oneLineConcatenate`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = usefulTags.oneLineConcatenate`
         This
         is
         ${"a"}

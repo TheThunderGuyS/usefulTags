@@ -2,14 +2,15 @@
   "name": "usefultags",
   "version": "0.3.0",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
-  "main": "dist/index.js",
-  "module": "index.mjs",
+  "main": "dist/index.cjs",
+  "module": "index.js",
+  "type": "module",
   "files": [
-    "index.mjs"
+    "index.js"
   ],
   "scripts": {
     "test": "node test",
-    "build": "npx babel index.mjs --out-dir dist"
+    "build": "npx babel index.js --out-file ./dist/index.cjs"
   },
   "engines": {
     "node": "*",

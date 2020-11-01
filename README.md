@@ -6,9 +6,12 @@
 
 ## Work in progress.
 
-There is currently support for all versions of Node.js/iojs, using both CommonJS and ESModules. It can be installed with `npm i usefultags`. It also supports any version of Deno and ES6 browsers, include `https://deno.land/x/usefultags/index.mjs` in your script.
+There is currently support for all versions of Node.js/iojs, using both CommonJS and ESModules. It can be installed with `npm i usefultags`.
+It also supports any version of Deno and ES6 browsers, include `https://deno.land/x/usefultags/index.js` in your script.
+ES3 browser support is coming soon.
 
 Being in early development, the functions are subject to change. They currently should be used as either a template tag or regular function, and simply accept the string as an argument.
+Documentation is an early work-in-progress.
 
 ## Examples:
 
@@ -26,7 +29,7 @@ const line = stripIndent`
         Random number: ${Math.random()}.`;
 console.log(line);
 ```
-#### Output:
+##### Expected Output:
 ```
 This
 is
@@ -52,7 +55,7 @@ const line = stripAllIndents`This
         Random number: ${Math.random()}.`;
 console.log(line);
 ```
-#### Output:
+##### Expected Output:
 ```
 This
 is
@@ -79,7 +82,7 @@ const line = oneLine`
         Random number: ${Math.random()}.`;
 console.log(line);
 ```
-#### Output:
+##### Expected Output:
 ```
 This is a multi-line newline indented  string. Random number: 0.xxxxxxxxxxxxxxxx.
 ```
@@ -98,7 +101,7 @@ const line = oneLineConcatenate`
         Random number: ${Math.random()}.`;
 console.log(line);
 ```
-#### Output:
+##### Expected Output:
 ```
 Thisisamulti-linenewlineindented  string.Random number: 0.xxxxxxxxxxxxxxxx.`;
 ```

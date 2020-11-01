@@ -24,6 +24,7 @@ export function stripIndent(strings, ...values) {
     const indents = string
         .match(/^\s+/gm) //Find whitespace at the beginning of lines
         .reduce((r, a) => Math.min(r, a.length), Infinity); //Get the number of whitespace characters from this
+
     return string
         .replace(new RegExp(`^[ \t]{${indents}}`, "gm"), "") //Trim the spaces
         .replace(/^\n/, ""); //Trim the first newline
