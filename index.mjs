@@ -1,21 +1,25 @@
 "use strict";
-//Get template literals and add back to string
-function restoreTemplates(strings, ...values) {
-    if (typeof strings !== "object") {
-        return strings;
+//Manage types (return string, add together array)
+function manageTypes(strings, ...values) {
+    if (typeof strings === "string") return strings;
+    else if (Array.isArray(strings)) {
+        let string = "";
+        strings.forEach((str, i) => {
+            string += str + (values[i] || "");
+        });
+        return string;
+    } else {
+        throw new TypeError(
+            `Parameter "strings" must be either a string or array. Got type "${typeof strings}" instead.`
+        );
     }
-    let string = "";
-    strings.forEach((str, i) => {
-        string += str + (values[i] || "");
-    });
-    return string;
 }
 
 /**Strip excess indentation from a string
  * @returns {string} Returns the string without indents.
  */
 export function stripIndent(strings, ...values) {
-    const string = restoreTemplates(strings, ...values);
+    const string = manageTypes(strings, ...values);
 
     const indents = string
         .match(/^\s+/gm) //Find whitespace at the beginning of lines
@@ -29,7 +33,7 @@ export function stripIndent(strings, ...values) {
  * @returns {string} Returns the string without any indents.
  */
 export function stripAllIndents(strings, ...values) {
-    const string = restoreTemplates(strings, ...values);
+    const string = manageTypes(strings, ...values);
 
     return string
         .replace(/^[ \t]+/gm, "") //Trim the spaces
@@ -40,7 +44,7 @@ export function stripAllIndents(strings, ...values) {
  * @returns {string} Returns the string on one line.
  */
 export function oneLine(strings, ...values) {
-    const string = restoreTemplates(strings, ...values);
+    const string = manageTypes(strings, ...values);
 
     return string
         .replace(/^\s+/gm, " ") //Trim all excess whitespace, replacing it with one space
@@ -52,7 +56,7 @@ export function oneLine(strings, ...values) {
  * @returns {string} Returns the string on one line.
  */
 export function oneLineConcatenate(strings, ...values) {
-    const string = restoreTemplates(strings, ...values);
+    const string = manageTypes(strings, ...values);
 
     return string
         .replace(/^\s+/gm, "") //Trim all excess whitespace
