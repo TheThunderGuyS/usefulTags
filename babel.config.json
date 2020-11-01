@@ -4,11 +4,7 @@
         "@babel/env",
             {
                 "targets": {
-                    "node": "4",
-                    "firefox": "34",
-                    "chrome": "41",
-                    "edge": "12",
-                    "safari": "9"
+                    "node": "0.1"
                 },
                 "spec": true
             }
