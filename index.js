@@ -15,9 +15,6 @@ function manageTypes(strings, ...values) {
     }
 }
 
-/**Strip excess indentation from a string
- * @returns {string} Returns the string without indents.
- */
 export function stripIndent(strings, ...values) {
     const string = manageTypes(strings, ...values);
 
@@ -30,9 +27,6 @@ export function stripIndent(strings, ...values) {
         .replace(/^\n/, ""); //Trim the first newline
 }
 
-/**Strip all indentation from a string
- * @returns {string} Returns the string without any indents.
- */
 export function stripAllIndents(strings, ...values) {
     const string = manageTypes(strings, ...values);
 
@@ -41,9 +35,6 @@ export function stripAllIndents(strings, ...values) {
         .replace(/^\n/, ""); //Trim the first newline
 }
 
-/**Put a multi-line string onto one line
- * @returns {string} Returns the string on one line.
- */
 export function oneLine(strings, ...values) {
     const string = manageTypes(strings, ...values);
 
@@ -53,9 +44,6 @@ export function oneLine(strings, ...values) {
         .replace(/\n/g, ""); //Trim all newlines
 }
 
-/**Put a multi-line string onto one line, without spaces between lines
- * @returns {string} Returns the string on one line.
- */
 export function oneLineConcatenate(strings, ...values) {
     const string = manageTypes(strings, ...values);
 
