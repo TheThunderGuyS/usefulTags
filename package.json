@@ -2,21 +2,21 @@
   "name": "usefultags",
   "version": "0.3.1",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
-  "main": "dist/index.cjs",
-  "module": "index.js",
-  "type": "module",
+  "main": "dist/index.js",
+  "module": "index.mjs",
   "files": [
-    "index.js"
+    "index.mjs"
   ],
   "scripts": {
     "test": "node test",
-    "build": "npx babel index.js --out-file ./dist/index.cjs"
+    "build": "npx babel index.mjs --out-file ./dist/index.js"
   },
   "engines": {
-    "node": "*",
+    "node": ">=0.2",
     "iojs": "*",
     "deno": "*"
   },
+  "browserslist": ["firefox 2", "chrome 4", "ie 5.5", "safari 4", "node 0.2"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheThunderGuyS/usefulTags.git"

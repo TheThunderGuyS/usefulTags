@@ -26,7 +26,7 @@ import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "usefult
 ### Deno
 In your source or dependencies file:
 ```js
-import {*} from "https://deno.land/x/usefultags@ver/index.js";
+import {*} from "https://deno.land/x/usefultags@ver/index.mjs";
 ```
 Make sure you replace `@ver` with the version tag you plan on using.
 
@@ -35,7 +35,7 @@ Make sure you replace `@ver` with the version tag you plan on using.
 #### For ES6 browsers
 Ensure your script has `type="module"` in the HTML. In your source file:
 ```js
-import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/index.js";
+import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/index.mjs";
 ```
 Make sure you replace `@ver` with the verion tag you plan on using.
 #### For legacy browsers
