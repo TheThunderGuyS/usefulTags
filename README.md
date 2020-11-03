@@ -25,6 +25,11 @@ Install the package with `npm i usefultags`.
 const usefulTags = require("usefultags");
 //...
 ```
+#### For ESModule enviroments:
+```js
+import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "usefultags";
+//...
+```
 #### For RequireJS enviroments
 ```js
 const requirejs = require("requirejs");
@@ -36,11 +41,6 @@ requirejs.config({
 requirejs(["usefultags"], (usefulTags) => {
     //...
 });
-```
-#### For ESModule enviroments:
-```js
-import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "usefultags";
-//...
 ```
 ---
 ### Deno
@@ -54,13 +54,20 @@ Make sure you replace `@ver` with the version tag you plan on using.
 ### Browsers
 Make sure you replace `@ver` with the verion tag you plan on using for all examples below.
 #### For ES6 browsers
-Ensure your script has `type="module"` in the HTML. In your source file:
 ```html
 <script type="module">
     import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/index.mjs";
     //...
 </script>
 ```
+#### For IEFF targets
+```html
+<script src="https://unpkg.com/usefultags@ver/dist/index.js"></script>
+<script>
+    //...
+</script>
+```
+There is currently an issue where it gets exposed under `index` instead of `usefulTags`. Will be fixed in 0.4.1.
 #### For RequireJS
 ```html
 <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
@@ -70,14 +77,6 @@ Ensure your script has `type="module"` in the HTML. In your source file:
 });
 </script>
 ```
-#### For legacy browsers
-```html
-<script src="https://unpkg.com/usefultags@ver/dist/index.js"></script>
-<script>
-    //...
-</script>
-```
-There is currently an issue where it gets exposed under `index` instead of `usefulTags`. Will be fixed in 0.4.1.
 
 ---
 ## Usage
