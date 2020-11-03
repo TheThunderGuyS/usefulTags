@@ -18,6 +18,18 @@ Install the package with `npm i usefultags`.
 ```js
 const usefulTags = require("usefultags");
 ```
+#### For RequireJS enviroments
+```js
+const requirejs = require("requirejs");
+
+requirejs.config({
+    nodeRequire: require
+});
+
+requirejs(["usefultags"], (usefulTags) => {
+    //...
+});
+```
 #### For ESModule enviroments:
 ```js
 import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "usefultags";
