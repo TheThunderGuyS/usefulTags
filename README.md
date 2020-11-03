@@ -6,7 +6,13 @@
 
 usefulTags is a small JavaScript library that adds a few useful and commonly used ES6 template tag functions. It can also be used as a regular function working with normal strings.
 
-This is not yet complete and functionality is subject to change. Full documentation is in the works.
+4 functions are exposed:
+1. [stripIndent](stripIndent)
+2. [stripAllIndents](stripAllIndents)
+3. [oneLine](oneLine)
+4. [oneLineConcatenate](oneLineConcatenate)
+
+This project is not yet complete and functionality is subject to change. Full documentation is in the works.
 
 ## Installation
 ### Node.js / iojs
@@ -17,6 +23,7 @@ Install the package with `npm i usefultags`.
 #### For CommonJS enviroments:
 ```js
 const usefulTags = require("usefultags");
+//...
 ```
 #### For RequireJS enviroments
 ```js
@@ -33,37 +40,59 @@ requirejs(["usefultags"], (usefulTags) => {
 #### For ESModule enviroments:
 ```js
 import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "usefultags";
+//...
 ```
 ---
 ### Deno
-In your source or dependencies file:
 ```js
 import {*} from "https://deno.land/x/usefultags@ver/index.mjs";
+//...
 ```
 Make sure you replace `@ver` with the version tag you plan on using.
 
 ---
 ### Browsers
+Make sure you replace `@ver` with the verion tag you plan on using for all examples below.
 #### For ES6 browsers
 Ensure your script has `type="module"` in the HTML. In your source file:
-```js
-import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/index.mjs";
+```html
+<script type="module">
+    import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/index.mjs";
+    //...
+</script>
 ```
-Make sure you replace `@ver` with the verion tag you plan on using.
+#### For RequireJS
+```html
+<script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+<script>
+    requirejs(["https://unpkg.com/usefultags@ver/dist/index.js"], (usefulTags) => {
+        //...
+});
+</script>
+```
 #### For legacy browsers
-Coming soon!
+```html
+<script src="https://unpkg.com/usefultags@ver/dist/index.js"></script>
+<script>
+    //...
+</script>
+```
+There is currently an issue where it gets exposed under `index` instead of `usefulTags`. Will be fixed in 0.4.1.
 
 ---
 ## Usage
 ```js
-usefulFunction`
+stripIndent`
     hello
     world`;
-usefulFunction("hello world");
+stripIndent(
+    "hello\n" +
+    "world"
+);
 ```
-usefulFunction is any of the below available functions. A string or array is required as an argument when used as a normal function.
+stripIndent representing any of the functions. A string or array is required as an argument when used as a normal function.
 
-Proper documentation is still being worked on.
+Better documentation is still being worked on.
 
 ## Examples:
 
