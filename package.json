@@ -17,10 +17,10 @@
     "deno": "*"
   },
   "browserslist": [
-    "firefox 2",
-    "chrome 4",
-    "ie 5.5",
-    "safari 4",
+    "firefox 4",
+    "chrome 19",
+    "ie 9",
+    "safari 6",
     "node 0.2"
   ],
   "repository": {
