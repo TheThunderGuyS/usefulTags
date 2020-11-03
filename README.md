@@ -7,10 +7,10 @@
 usefulTags is a small JavaScript library that adds a few useful and commonly used ES6 template tag functions. It can also be used as a regular function working with normal strings.
 
 4 functions are exposed:
-1. [stripIndent](stripIndent)
-2. [stripAllIndents](stripAllIndents)
-3. [oneLine](oneLine)
-4. [oneLineConcatenate](oneLineConcatenate)
+1. [stripIndent](#stripindent)
+2. [stripAllIndents](#stripallindents)
+3. [oneLine](#oneline)
+4. [oneLineConcatenate](#onelineconcatenate)
 
 This project is not yet complete and functionality is subject to change. Full documentation is in the works.
 
