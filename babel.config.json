@@ -5,7 +5,8 @@
             "@babel/env",
             {
                 "modules": "umd",
-                "spec": true
+                "spec": true,
+                "exclude": ["@babel/plugin-transform-typeof-symbol"]
             }
         ],
         [
