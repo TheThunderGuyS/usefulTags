@@ -3,7 +3,7 @@ const requirejs = require("requirejs");
 requirejs.config({
     nodeRequire: require
 });
-requirejs(["./dist/index.js"], (usefulTags) => {
+requirejs(["./dist/usefulTags.js"], (usefulTags) => {
     {
         const single = usefulTags.stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
         const multi = usefulTags.stripIndent`

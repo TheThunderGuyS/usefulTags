@@ -4,7 +4,7 @@ import {
     stripAllIndents,
     oneLine,
     oneLineConcatenate
-} from "./index.mjs";
+} from "./usefulTags.mjs";
 
 {
     {

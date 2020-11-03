@@ -2,7 +2,7 @@
 <p align="center">A tiny JavaScript library incorporating some useful template tag functions.</p>
 
 ---
-![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
+![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
 
 usefulTags is a small JavaScript library that adds a few useful and commonly used ES6 template tag functions. It can also be used as a regular function working with normal strings.
 
@@ -45,7 +45,7 @@ requirejs(["usefultags"], (usefulTags) => {
 ---
 ### Deno
 ```js
-import {*} from "https://deno.land/x/usefultags@ver/index.mjs";
+import * from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 //...
 ```
 Make sure you replace `@ver` with the version tag you plan on using.
@@ -56,23 +56,22 @@ Make sure you replace `@ver` with the verion tag you plan on using for all examp
 #### For ES6 browsers
 ```html
 <script type="module">
-    import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/index.mjs";
+    import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
     //...
 </script>
 ```
 #### For IEFF targets
 ```html
-<script src="https://unpkg.com/usefultags@ver/dist/index.js"></script>
+<script src="https://unpkg.com/usefultags@ver/dist/usefulTags.js"></script>
 <script>
     //...
 </script>
 ```
-There is currently an issue where it gets exposed under `index` instead of `usefulTags`. Will be fixed in 0.4.1.
 #### For RequireJS
 ```html
 <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
 <script>
-    requirejs(["https://unpkg.com/usefultags@ver/dist/index.js"], (usefulTags) => {
+    requirejs(["https://unpkg.com/usefultags@ver/dist/usefulTags.js"], (usefulTags) => {
         //...
 });
 </script>
