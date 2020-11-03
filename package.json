@@ -16,7 +16,13 @@
     "iojs": "*",
     "deno": "*"
   },
-  "browserslist": ["firefox 2", "chrome 4", "ie 5.5", "safari 4", "node 0.2"],
+  "browserslist": [
+    "firefox 2",
+    "chrome 4",
+    "ie 5.5",
+    "safari 4",
+    "node 0.2"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheThunderGuyS/usefulTags.git"
@@ -37,9 +43,11 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "babel-eslint": "^10.1.0",
+    "babel-preset-minify": "^0.5.1",
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "2.1.2"
+    "prettier": "2.1.2",
+    "requirejs": "^2.3.6"
   }
 }
