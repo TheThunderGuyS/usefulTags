@@ -4,97 +4,67 @@
 ---
 ![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
 
-usefulTags is a small JavaScript library that adds a few useful and commonly used ES6 template tag functions. It can also be used as a regular function working with normal strings.
+usefulTags is a small JavaScript library that adds a few useful and commonly needed ES6 template tag functions.
 
-4 functions are exposed:
-1. [stripIndent](#stripindent)
-2. [stripAllIndents](#stripallindents)
-3. [oneLine](#oneline)
-4. [oneLineConcatenate](#onelineconcatenate)
+4 tags can be used:
+1. [stripIndent](#stripindent): Remove indents from each line in a multi-line string, but keep intentionally larger ones
+2. [stripAllIndents](#stripallindents): Remove all indents from each line in a multi-line string
+3. [oneLine](#oneline): Merge a multi-line string onto one line (useful to keep lines under 80 characters)
+4. [oneLineConcatenate](#onelineconcatenate): Merge a multi-line string onto one line, without spaces (useful for URLs)
 
 This project is not yet complete and functionality is subject to change. Full documentation is in the works.
 
+## Example
+```js
+import {stripIndent} from "usefultags"
+const string = stripIndent`
+    Hello
+    World!`;
+
+/*Output (has no indents!):
+Hello
+World
+*/
+```
+
 ## Installation
-### Node.js / iojs
-Any version is supported.
+### Requirements
+- Any Node.js / iojs version
+- Any Deno version
+- Any other enviroment supporting ES5
 
-Install the package with `npm i usefultags`.
+Supports the majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.)
 
-#### For CommonJS enviroments:
-```js
-const usefulTags = require("usefultags");
-//...
+### Directions
+#### Node
+Install with NPM:
+```sh
+npm i usefultags
 ```
-#### For ESModule enviroments:
-```js
-import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "usefultags";
-//...
-```
-#### For RequireJS enviroments
-```js
-const requirejs = require("requirejs");
+Require the package as usual, supports both CommonJS and ESModule (and RequireJS if you use it).
 
-requirejs.config({
-    nodeRequire: require
-});
+#### Browsers
+Use UNPKG to load the module:
 
-requirejs(["usefultags"], (usefulTags) => {
-    //...
-});
-```
----
-### Deno
-```js
-import * from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
-//...
-```
-Make sure you replace `@ver` with the version tag you plan on using.
+`https://unpkg.com/usefultags@ver/usefulTags.mjs` (ESModule)
 
----
-### Browsers
-Make sure you replace `@ver` with the verion tag you plan on using for all examples below.
-#### For ES6 browsers
-```html
-<script type="module">
-    import {stripIndent, stripAllIndents, oneLine, oneLineConcatenate} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
-    //...
-</script>
-```
-#### For IEFF targets
-```html
-<script src="https://unpkg.com/usefultags@ver/dist/usefulTags.js"></script>
-<script>
-    //...
-</script>
-```
-#### For RequireJS
-```html
-<script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
-<script>
-    requirejs(["https://unpkg.com/usefultags@ver/dist/usefulTags.js"], (usefulTags) => {
-        //...
-});
-</script>
-```
+`https://unpkg.com/usefultags@ver/dist/usefulTags.js` (IEFF script/AMD)
+
+Ensure you replace `@ver` with a version tag. You can always download these scripts to your own CDN if you like.
+
+#### Deno
+Import `https://deno.land/x/usefultags/usefulTags.mjs`.
 
 ---
 ## Usage
-```js
-stripIndent`
-    hello
-    world`;
-stripIndent(
-    "hello\n" +
-    "world"
-);
-```
-stripIndent representing any of the functions. A string or array is required as an argument when used as a normal function.
+For non-ESModule enviroments, the default namespace is `usefulTags`.
 
-Better documentation is still being worked on.
+All tags take a string or array as a required (automatically supplied) argument, and return a string.
+See the below examples on how to use them.
 
-## Examples:
-
+## Available tags:
 ### stripIndent:
+Remove indents from each line in a multi-line string, but keep intentionally larger ones
 ```js
 const line = stripIndent`
         This
@@ -107,9 +77,8 @@ const line = stripIndent`
         string.
         Random number: ${Math.random()}.`;
 console.log(line);
-```
-#### Expected Output:
-```
+
+/*Output:
 This
 is
 a
@@ -119,9 +88,11 @@ newline
     indented  
 string.
 Random number: 0.xxxxxxxxxxxxxxxx.
+*/
 ```
 
 ### stripAllIndents:
+Remove all indents from each line in a multi-line string
 ```js
 const line = stripAllIndents`This
     is
@@ -133,9 +104,8 @@ const line = stripAllIndents`This
         string.
         Random number: ${Math.random()}.`;
 console.log(line);
-```
-#### Expected Output:
-```
+
+/*Output:
 This
 is
 a
@@ -145,9 +115,10 @@ newline
 indented  
 string.
 Random number: 0.xxxxxxxxxxxxxxxx.
+*/
 ```
-
 ### oneLine:
+Merge a multi-line string onto one line (useful to keep lines under 80 characters)
 ```js
 const line = oneLine`
         This
@@ -160,13 +131,14 @@ const line = oneLine`
         string.
         Random number: ${Math.random()}.`;
 console.log(line);
-```
-#### Expected Output:
-```
+
+/*Output:
 This is a multi-line newline indented  string. Random number: 0.xxxxxxxxxxxxxxxx.
+*/
 ```
 
 ### oneLineConcatenate:
+Merge a multi-line string onto one line, without spaces (useful for URLs)
 ```js
 const line = oneLineConcatenate`
         This
@@ -179,8 +151,10 @@ const line = oneLineConcatenate`
         string.
         Random number: ${Math.random()}.`;
 console.log(line);
-```
-##### Expected Output:
-```
+
+/*Output:
 Thisisamulti-linenewlineindented  string.Random number: 0.xxxxxxxxxxxxxxxx.
+*/
 ```
+## License
+usefulTags is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
