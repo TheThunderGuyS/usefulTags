@@ -6,12 +6,6 @@
 
 usefulTags is a small JavaScript library that adds a few useful and commonly needed ES6 template tag functions.
 
-4 tags can be used:
-1. [stripIndent](#stripindent): Remove indents from each line in a multi-line string, but keep intentionally larger ones
-2. [stripAllIndents](#stripallindents): Remove all indents from each line in a multi-line string
-3. [oneLine](#oneline): Merge a multi-line string onto one line (useful to keep lines under 80 characters)
-4. [oneLineConcatenate](#onelineconcatenate): Merge a multi-line string onto one line, without spaces (useful for URLs)
-
 This project is not yet complete and functionality is subject to change. Full documentation is in the works.
 
 ## Example
@@ -26,6 +20,21 @@ Hello
 World
 */
 ```
+
+## Table of Contents
+- [Installation](#installation)
+    - [Requirements](#requirements)
+    - [Directions](#directions)
+        - [Node](#node)
+        - [Browsers](#browsers)
+        - [Deno](#deno)
+- [Usage](#usage)
+    - [Available Tags](#available-tags)
+        - [`stripIndent`](#stripindent)
+        - [`stripAllIndents`](#stripallindents)
+        - [`oneLine`](#oneline)
+        - [`oneLineConcatenate`](#onelineconcatenate)
+- [License](#license)
 
 ## Installation
 ### Requirements
@@ -62,8 +71,8 @@ For non-ESModule enviroments, the default namespace is `usefulTags`.
 All tags take a string or array as a required (automatically supplied) argument, and return a string.
 See the below examples on how to use them.
 
-## Available tags:
-### stripIndent:
+### Available Tags:
+#### stripIndent:
 Remove indents from each line in a multi-line string, but keep intentionally larger ones
 ```js
 const line = stripIndent`
@@ -91,7 +100,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
 
-### stripAllIndents:
+#### stripAllIndents:
 Remove all indents from each line in a multi-line string
 ```js
 const line = stripAllIndents`This
@@ -117,7 +126,7 @@ string.
 Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
-### oneLine:
+#### oneLine:
 Merge a multi-line string onto one line (useful to keep lines under 80 characters)
 ```js
 const line = oneLine`
@@ -137,7 +146,7 @@ This is a multi-line newline indented  string. Random number: 0.xxxxxxxxxxxxxxxx
 */
 ```
 
-### oneLineConcatenate:
+#### oneLineConcatenate:
 Merge a multi-line string onto one line, without spaces (useful for URLs)
 ```js
 const line = oneLineConcatenate`
