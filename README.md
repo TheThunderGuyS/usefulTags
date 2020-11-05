@@ -4,20 +4,21 @@
 ---
 ![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
 
-usefulTags is a small JavaScript library that adds a few useful and commonly needed ES6 template tag functions.
+usefulTags is a small JavaScript library that adds a handful of commonly used and helpful template tag functions.
 
 This project is not yet complete and functionality is subject to change. Full documentation is in the works.
 
 ## Example
 ```js
-import {stripIndent} from "usefultags"
-const string = stripIndent`
+import {stripIndent} from "usefultags";
+
+stripIndent`
     Hello
     World!`;
 
-/*Output (has no indents!):
+/*Output (has no indents):
 Hello
-World
+World!
 */
 ```
 
@@ -50,22 +51,31 @@ Install with NPM:
 ```sh
 npm i usefultags
 ```
-Require the package as usual, supports both CommonJS and ESModule (and RequireJS if you use it).
 
 #### Browsers
-Use UNPKG to load the module:
+Use UNPKG to load the library:
+```html
+<script src="https://unpkg.com/usefultags@ver"></script>
+```
+Ensure you replace `@ver` with a version tag. You can always download the library to your own CDN if you like.
 
-`https://unpkg.com/usefultags@ver/usefulTags.mjs` (ESModule)
-
-`https://unpkg.com/usefultags@ver/dist/usefulTags.js` (IEFF script/AMD)
-
-Ensure you replace `@ver` with a version tag. You can always download these scripts to your own CDN if you like.
-
+For ESModule and RequireJS targets, see [usage](#usage).
 #### Deno
-Import `https://deno.land/x/usefultags/usefulTags.mjs`.
+Simply import `https://deno.land/x/usefultags/usefulTags.mjs`.
 
 ---
 ## Usage
+### Importing
+#### Node
+```js
+//CommonJS loader:
+const usefulTags = require("usefultags");
+//----
+//RequireJS loader (assuming it's already configured for Node):
+requirejs(["usefultags"], (usefulTags) => {
+    //...
+});
+```
 For non-ESModule enviroments, the default namespace is `usefulTags`.
 
 All tags take a string or array as a required (automatically supplied) argument, and return a string.
