@@ -65,6 +65,8 @@ Simply import `https://deno.land/x/usefultags/usefulTags.mjs`.
 
 ---
 ## Usage
+All tags take a string or array as a required (automatically supplied) argument, and return a string.
+See the [below examples](#availabletags) on how to use them.
 ### Importing
 #### Node
 ```js
@@ -75,11 +77,21 @@ const usefulTags = require("usefultags");
 requirejs(["usefultags"], (usefulTags) => {
     //...
 });
+//---
+//ESModule loader
+import {/*...*/} from "usefultags";
 ```
 For non-ESModule enviroments, the default namespace is `usefulTags`.
 
-All tags take a string or array as a required (automatically supplied) argument, and return a string.
-See the below examples on how to use them.
+#### Browsers
+If you used the regular script, the library should be available under the namespace `usefulTags` or `window.usefulTags`
+
+```js
+//RequireJS loader (make sure you replace @ver with the version)
+requirejs(["https://unpkg.com/usefultags@ver"], (usefulTags) => {
+    //...
+});
+```
 
 ### Available Tags:
 #### stripIndent:
