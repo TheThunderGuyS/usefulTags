@@ -19,7 +19,7 @@ export function stripIndent(strings, ...values) {
     const string = manageTypes(strings, ...values);
 
     const indents = string
-        .match(/^\s+/gm) //Find whitespace at the beginning of lines
+        .match(/^\s*/gm) //Find whitespace at the beginning of lines
         .reduce((r, a) => Math.min(r, a.length), Infinity); //Get the number of whitespace characters from this
 
     return string

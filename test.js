@@ -1,9 +1,14 @@
 "use strict";
-const usefulTags = require("./dist/usefulTags.js");
+const {
+    stripIndent,
+    stripAllIndents,
+    oneLine,
+    oneLineConcatenate
+} = require("./dist/usefulTags.js");
 {
     {
-        const single = usefulTags.stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = usefulTags.stripIndent`
+        const single = stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = stripIndent`
         This
         is
         ${"a"}
@@ -18,8 +23,8 @@ const usefulTags = require("./dist/usefulTags.js");
     }
 
     {
-        const single = usefulTags.stripAllIndents`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = usefulTags.stripAllIndents`This
+        const single = stripAllIndents`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = stripAllIndents`This
     is
          ${"a"}
       multi-line
@@ -33,8 +38,8 @@ const usefulTags = require("./dist/usefulTags.js");
     }
 
     {
-        const single = usefulTags.oneLine`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = usefulTags.oneLine`
+        const single = oneLine`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = oneLine`
         This
         is
         ${"a"}
@@ -49,8 +54,8 @@ const usefulTags = require("./dist/usefulTags.js");
     }
 
     {
-        const single = usefulTags.oneLineConcatenate`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
-        const multi = usefulTags.oneLineConcatenate`
+        const single = oneLineConcatenate`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
+        const multi = oneLineConcatenate`
         This
         is
         ${"a"}
