@@ -6,18 +6,16 @@
 
 usefulTags is a small JavaScript library that adds a handful of commonly used and helpful template tag functions.
 
-This project is not yet complete and functionality is subject to change. Full documentation is in the works.
-
 ## Example
 ```js
 import {stripIndent} from "usefultags";
 
 stripIndent`
-    Hello
+    Hello,
     World!`;
 
 /*Output (has no indents):
-Hello
+Hello,
 World!
 */
 ```
@@ -36,6 +34,7 @@ World!
         - [`stripAllIndents`](#stripallindents)
         - [`oneLine`](#oneline)
         - [`oneLineConcatenate`](#onelineconcatenate)
+    - [Tags on Regular Strings](#tags-on-regular-strings)
 - [License](#license)
 
 ## Installation
@@ -59,18 +58,18 @@ For URL based loaders, instead see [importing](#importing).
 ## Usage
 Syntax:
 ```js
-stripIndent`<templateStringArray>`;
-stripIndent(string || Array);
+stripIndent`{templateStringArray}`;
+stripIndent({string || Array});
 ```
-See [available tags](#available-tags) for examples.
+See [available tags](#available-tags) for usage examples.
 ### Importing
-For ESModule imports, you can swap or add to the `stripIndent` example with what's listed in [available tags](#available-tags).
+You can swap or add to the `stripIndent` example in the import array with what's listed in [available tags](#available-tags).
 
-For non-ESModule enviroments, the default namespace is `usefulTags`.
+The default suggested namespace is `usefulTags`, if you choose not to directly import tags.
 #### Node
 ```js
 //CommonJS loader:
-const usefulTags = require("usefultags");
+const {stripIndent} = require("usefultags");
 ```
 ```js
 //RequireJS loader (assuming it's already configured for Node):
@@ -85,31 +84,32 @@ import {stripIndent} from "usefultags";
 
 #### Browsers
 ```html
-<!--If you have no module loader, use the script-->
+<!--If you have no module loader, use the script (ensure you replace @ver with a version tag)-->
 <script src="https://unpkg.com/usefultags@ver"></script>
 <!--The namespace is "usefulTags" or "window.usefulTags"-->
 ```
 ```js
-//RequireJS loader (ensure you replace `@ver` with a version tag)
+//RequireJS loader (ensure you replace @ver with a version tag)
 requirejs(["https://unpkg.com/usefultags@ver"], (usefulTags) => {
     //...
 });
 ```
 ```js
-//ESModule loader (again, ensure you replace `@ver` with a version tag)
+//ESModule loader (again, ensure you replace @ver with a version tag)
 //Remember that the ESModule version loads from the /usefulTags.mjs path
 import {stripIndent} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
 ```
 
 #### Deno
 ```js
-import * from "https://deno.land/x/usefultags/usefulTags.mjs";
+//Ensure you replace `@ver` with a version tag
+import {usefulTags} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 ```
 
 ### Available Tags:
-These are all of the functions available from usefulTags.
+These are all of the tags exposed by usefulTags.
 #### `stripIndent`:
-Remove indents from each line in a multi-line string, but keep intentionally larger ones
+Remove initial indentation from each line in a multi-line string, but keep intentionally larger ones
 ```js
 const line = stripIndent`
         This
@@ -137,7 +137,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 ```
 
 #### `stripAllIndents`:
-Remove all indents from each line in a multi-line string
+Remove *all* indentation from each line in a multi-line string
 ```js
 const line = stripAllIndents`This
     is
@@ -172,13 +172,13 @@ const line = oneLine`
         multi-line
         newline
          
-            indented  
+            indented  /
         string.
         Random number: ${Math.random()}.`;
 console.log(line);
 
 /*Output:
-This is a multi-line newline indented  string. Random number: 0.xxxxxxxxxxxxxxxx.
+This is a multi-line newline indented  / string. Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
 
@@ -192,14 +192,26 @@ const line = oneLineConcatenate`
         multi-line
         newline
          
-            indented  
+            indented  /
         string.
         Random number: ${Math.random()}.`;
 console.log(line);
 
 /*Output:
-Thisisamulti-linenewlineindented  string.Random number: 0.xxxxxxxxxxxxxxxx.
+Thisisamulti-linenewlineindented  /string.Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
+
+## Tags on Regular Strings
+If needed, you can always use any tag without an actual template string.
+Supply a string or array of strings as an argument to the function.
+```js
+stripIndent("    Hello,\n    World!");
+/*Output:
+Hello,
+World!
+*/
+```
+
 ## License
 usefulTags is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
