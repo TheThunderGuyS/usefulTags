@@ -26,10 +26,11 @@ World!
 - [Installation](#installation)
     - [Requirements](#requirements)
     - [Directions](#directions)
+- [Usage](#usage)
+    - [Importing](#importing)
         - [Node](#node)
         - [Browsers](#browsers)
         - [Deno](#deno)
-- [Usage](#usage)
     - [Available Tags](#available-tags)
         - [`stripIndent`](#stripindent)
         - [`stripAllIndents`](#stripallindents)
@@ -42,59 +43,72 @@ World!
 - Any Node.js / iojs version
 - Any Deno version
 - Any other enviroment supporting ES5
+- Enviroment supporting template literals (try [Babel](https://babeljs.io) for ES5 enviroments)
 
-Supports the majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.)
+usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.)
 
+If you want to support older enviroments, you will need to use an ES5 polyfill.
 ### Directions
-#### Node
 Install with NPM:
-```sh
+```
 npm i usefultags
 ```
-
-#### Browsers
-Use UNPKG to load the library:
-```html
-<script src="https://unpkg.com/usefultags@ver"></script>
-```
-Ensure you replace `@ver` with a version tag. You can always download the library to your own CDN if you like.
-
-For ESModule and RequireJS targets, see [usage](#usage).
-#### Deno
-Simply import `https://deno.land/x/usefultags/usefulTags.mjs`.
+For URL based loaders, instead see [importing](#importing).
 
 ---
 ## Usage
-All tags take a string or array as a required (automatically supplied) argument, and return a string.
-See the [below examples](#availabletags) on how to use them.
+Syntax:
+```js
+stripIndent`<templateStringArray>`;
+stripIndent(string || Array);
+```
+See [available tags](#available-tags) for examples.
 ### Importing
+For ESModule imports, you can swap or add to the `stripIndent` example with what's listed in [available tags](#available-tags).
+
+For non-ESModule enviroments, the default namespace is `usefulTags`.
 #### Node
 ```js
 //CommonJS loader:
 const usefulTags = require("usefultags");
-//----
+```
+```js
 //RequireJS loader (assuming it's already configured for Node):
 requirejs(["usefultags"], (usefulTags) => {
     //...
 });
-//---
-//ESModule loader
-import {/*...*/} from "usefultags";
 ```
-For non-ESModule enviroments, the default namespace is `usefulTags`.
+```js
+//ESModule loader
+import {stripIndent} from "usefultags";
+```
 
 #### Browsers
-If you used the regular script, the library should be available under the namespace `usefulTags` or `window.usefulTags`
-
+```html
+<!--If you have no module loader, use the script-->
+<script src="https://unpkg.com/usefultags@ver"></script>
+<!--The namespace is "usefulTags" or "window.usefulTags"-->
+```
 ```js
-//RequireJS loader (make sure you replace @ver with the version)
+//RequireJS loader (ensure you replace `@ver` with a version tag)
 requirejs(["https://unpkg.com/usefultags@ver"], (usefulTags) => {
     //...
 });
 ```
+```js
+//ESModule loader (again, ensure you replace `@ver` with a version tag)
+//Remember that the ESModule version loads from the /usefulTags.mjs path
+import {stripIndent} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
+```
+
+#### Deno
+```js
+import * from "https://deno.land/x/usefultags/usefulTags.mjs";
+```
 
 ### Available Tags:
-#### stripIndent:
+These are all of the functions available from usefulTags.
+#### `stripIndent`:
 Remove indents from each line in a multi-line string, but keep intentionally larger ones
 ```js
 const line = stripIndent`
@@ -122,7 +136,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
 
-#### stripAllIndents:
+#### `stripAllIndents`:
 Remove all indents from each line in a multi-line string
 ```js
 const line = stripAllIndents`This
@@ -148,7 +162,7 @@ string.
 Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
-#### oneLine:
+#### `oneLine`:
 Merge a multi-line string onto one line (useful to keep lines under 80 characters)
 ```js
 const line = oneLine`
@@ -168,7 +182,7 @@ This is a multi-line newline indented  string. Random number: 0.xxxxxxxxxxxxxxxx
 */
 ```
 
-#### oneLineConcatenate:
+#### `oneLineConcatenate`:
 Merge a multi-line string onto one line, without spaces (useful for URLs)
 ```js
 const line = oneLineConcatenate`
