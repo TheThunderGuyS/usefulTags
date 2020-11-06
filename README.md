@@ -44,9 +44,7 @@ World!
 - Any other enviroment supporting ES5
 - Enviroment supporting template literals (try [Babel](https://babeljs.io) for ES5 enviroments)
 
-usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.)
-
-If you want to support older enviroments, you will need to use an ES5 polyfill.
+usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.) thanks to UMD.
 ### Directions
 Install with NPM:
 ```
