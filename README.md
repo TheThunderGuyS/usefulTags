@@ -82,9 +82,9 @@ import {stripIndent} from "usefultags";
 
 #### Browsers
 ```html
-<!--If you have no module loader, use the script (ensure you replace @ver with a version tag)-->
-<script src="https://unpkg.com/usefultags@ver"></script>
+<!--If you have no module loader, use this script (ensure you replace @ver with a version tag)-->
 <!--The namespace is "usefulTags" or "window.usefulTags"-->
+<script src="https://unpkg.com/usefultags@ver"></script>
 ```
 ```js
 //RequireJS loader (ensure you replace @ver with a version tag)
@@ -94,13 +94,13 @@ requirejs(["https://unpkg.com/usefultags@ver"], (usefulTags) => {
 ```
 ```js
 //ESModule loader (again, ensure you replace @ver with a version tag)
-//Remember that the ESModule version loads from the /usefulTags.mjs path
+//Remember that the ESModule version is located in the /usefulTags.mjs path
 import {stripIndent} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
 ```
 
 #### Deno
 ```js
-//Ensure you replace `@ver` with a version tag
+//Ensure you replace @ver with a version tag
 import {usefulTags} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 ```
 
@@ -108,6 +108,7 @@ import {usefulTags} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 These are all of the tags exposed by usefulTags.
 #### `stripIndent`:
 Remove initial indentation from each line in a multi-line string, but keep intentionally larger ones
+(useful deep in callbacks/conditionals to keep indented source looking clean and functional)
 ```js
 const line = stripIndent`
         This
@@ -136,6 +137,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 
 #### `stripAllIndents`:
 Remove *all* indentation from each line in a multi-line string
+(useful deep in callbacks/conditionals where extra indents are a generated mistake)
 ```js
 const line = stripAllIndents`This
     is
@@ -161,7 +163,8 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
 #### `oneLine`:
-Merge a multi-line string onto one line (useful to keep lines under 80 characters)
+Merge a multi-line string onto one line
+(useful for keeping long lines under 80 characters)
 ```js
 const line = oneLine`
         This
@@ -181,7 +184,8 @@ This is a multi-line newline indented  / string. Random number: 0.xxxxxxxxxxxxxx
 ```
 
 #### `oneLineConcatenate`:
-Merge a multi-line string onto one line, without spaces (useful for URLs)
+Merge a multi-line string onto one line, without spaces
+(useful for URLs constructed using template literals)
 ```js
 const line = oneLineConcatenate`
         This
