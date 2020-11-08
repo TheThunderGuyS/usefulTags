@@ -50,7 +50,7 @@ Install with NPM:
 ```
 npm i usefultags
 ```
-For URL based loaders, instead see [importing](#importing).
+For URL based loaders, instead see [importing](#importing) instead.
 
 ---
 ## Usage
