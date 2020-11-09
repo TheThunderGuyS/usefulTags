@@ -48,6 +48,8 @@ World!
 - Any other environment supporting ES5 (most browsers)
 
 usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.) thanks to [UMD](https://github.com/umdjs/umd).
+
+usefulTags works with transpilers like TypeScript and Babel, so you can write ES2015 template literals and transform it to ES5.
 ### Directions
 Install with NPM:
 ```
