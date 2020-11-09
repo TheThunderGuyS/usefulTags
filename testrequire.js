@@ -12,8 +12,8 @@ requirejs(["./dist/usefulTags.js"], (usefulTags) => {
         ${"a"}
         multi-line
         newline
-
-            indented
+         
+            indented  
         string.
         Random number: ${Math.random()}.`;
 
@@ -27,8 +27,8 @@ requirejs(["./dist/usefulTags.js"], (usefulTags) => {
          ${"a"}
       multi-line
         newline
-
-            indented
+         
+            indented  
         string.
         Random number: ${Math.random()}.`;
 
@@ -43,8 +43,8 @@ requirejs(["./dist/usefulTags.js"], (usefulTags) => {
         ${"a"}
         multi-line
         newline
-
-            indented
+         
+            indented  
         string.
         Random number: ${Math.random()}.`;
 
@@ -59,8 +59,8 @@ requirejs(["./dist/usefulTags.js"], (usefulTags) => {
         ${"a"}
         multi-line
         newline
-
-            indented
+         
+            indented  
         string.
         Random number: ${Math.random()}.`;
 
