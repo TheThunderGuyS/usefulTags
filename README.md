@@ -4,7 +4,11 @@
 ---
 ![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
 
-usefulTags is a small JavaScript library that adds a handful of commonly used and helpful template tag functions.
+usefulTags is a compact JavaScript library that adds a handful of commonly used and helpful template tags.
+It aims to be small, simple and practical by adding 4 template tags with no frills.
+
+By default, template strings preserve all newlines and indents, which can be irritating and make source code look awful.
+usefulTags' primary purpose is to resolve this issue in the vast majority of use cases, with 4 tags for managing newlines and indents.
 
 ## Example
 ```js
@@ -14,7 +18,7 @@ stripIndent`
     Hello,
     World!`;
 
-/*Output (has no indents):
+/*Output (has no extra indents):
 Hello,
 World!
 */
@@ -41,16 +45,15 @@ World!
 ### Requirements
 - Any Node.js / iojs version
 - Any Deno version
-- Any other enviroment supporting ES5
-- Enviroment supporting template literals (try [Babel](https://babeljs.io) for ES5 enviroments)
+- Any other environment supporting ES5 (most browsers)
 
-usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.) thanks to UMD.
+usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.) thanks to [UMD](https://github.com/umdjs/umd).
 ### Directions
 Install with NPM:
 ```
 npm i usefultags
 ```
-For URL based loaders, instead see [importing](#importing) instead.
+For URL based loaders and browsers, see [importing](#importing) instead.
 
 ---
 ## Usage
@@ -107,8 +110,8 @@ import {usefulTags} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 ### Available Tags:
 These are all of the tags exposed by usefulTags.
 #### `stripIndent`:
-Remove initial indentation from each line in a multi-line string, but keep intentionally larger ones
-(useful deep in callbacks/conditionals to keep indented source looking clean and functional)
+Remove initial indentation from each line in a multi-line string, but keep intentionally larger indents
+(useful deep in callbacks/conditionals to keep indented source looking tidy and operational)
 ```js
 const line = stripIndent`
         This
@@ -137,7 +140,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 
 #### `stripAllIndents`:
 Remove *all* indentation from each line in a multi-line string
-(useful deep in callbacks/conditionals where extra indents are a generated mistake)
+(useful deep in callbacks/conditionals where additional indents are a generated mistake)
 ```js
 const line = stripAllIndents`This
     is
