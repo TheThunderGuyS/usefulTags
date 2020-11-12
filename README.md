@@ -47,9 +47,9 @@ World!
 - Any Deno version
 - Any other environment supporting ES5 (most browsers)
 
-usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, IEFF scripts, etc.) thanks to [UMD](https://github.com/umdjs/umd).
+usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, script tags, etc.) thanks to [UMD](https://github.com/umdjs/umd).
 
-usefulTags works with transpilers like TypeScript and Babel, so you can write ES2015 template literals and transform it to ES5.
+usefulTags works with transpilers like TypeScript and Babel, so you can write template literals in ES2015 and transform it to ES5.
 ### Directions
 Install with NPM:
 ```
@@ -66,9 +66,9 @@ stripIndent({string || Array});
 ```
 See [available tags](#available-tags) for usage examples.
 ### Importing
-You can swap or add to the `stripIndent` example in the import array with what's listed in [available tags](#available-tags).
+See importable functions at [available tags](#available-tags).
 
-The default suggested namespace is `usefulTags`, if you choose not to directly import tags.
+The default suggested namespace is `usefulTags` if you choose not to pollute the global namespace.
 #### Node
 ```js
 //CommonJS loader:
@@ -106,12 +106,12 @@ import {stripIndent} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
 #### Deno
 ```js
 //Ensure you replace @ver with a version tag
-import {usefulTags} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
+import {stripIndent} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 ```
 
 ### Available Tags:
 These are all of the tags exposed by usefulTags.
-#### `stripIndent`:
+#### `stripIndent`
 Remove initial indentation from each line in a multi-line string, but keep intentionally larger indents
 (useful deep in callbacks/conditionals to keep indented source looking tidy and operational)
 ```js
@@ -140,7 +140,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
 
-#### `stripAllIndents`:
+#### `stripAllIndents`
 Remove *all* indentation from each line in a multi-line string
 (useful deep in callbacks/conditionals where additional indents are a generated mistake)
 ```js
@@ -167,7 +167,7 @@ string.
 Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
-#### `oneLine`:
+#### `oneLine`
 Merge a multi-line string onto one line
 (useful for keeping long lines under 80 characters)
 ```js
@@ -188,7 +188,7 @@ This is a multi-line newline indented  / string. Random number: 0.xxxxxxxxxxxxxx
 */
 ```
 
-#### `oneLineConcatenate`:
+#### `oneLineConcatenate`
 Merge a multi-line string onto one line, without spaces
 (useful for URLs constructed using template literals)
 ```js
