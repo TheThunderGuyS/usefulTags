@@ -1,6 +1,6 @@
 {
   "name": "usefultags",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "dist/usefulTags.js",
   "module": "usefulTags.mjs",
@@ -20,7 +20,6 @@
     "firefox 4",
     "chrome 19",
     "ie 9",
-    "safari 6",
     "node 0.2"
   ],
   "repository": {
