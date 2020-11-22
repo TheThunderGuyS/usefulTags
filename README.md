@@ -39,6 +39,7 @@ World!
         - [`oneLine`](#oneline)
         - [`oneLineConcatenate`](#onelineconcatenate)
     - [Tags on Regular Strings](#tags-on-regular-strings)
+    - [TypeScript Usage](#typescript-usage)
 - [License](#license)
 
 ## Installation
@@ -107,7 +108,11 @@ import {stripIndent} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
 #### Deno
 ```js
 //Ensure you replace @ver with a version tag
-import {stripIndent} from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
+//This will import the module with TypeScript type defenitions (v1.1.0 and later)
+//For regular JavaScript you should do a more traditional import like the one with Node.js
+import * as usefulTags from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
+import * as _usefulTags from "https://deno.land/x/usefultags@ver/usefulTags.d.ts";
+const {stripIndent} = usefulTags as typeof _usefulTags;
 ```
 
 ### Available Tags:
@@ -210,7 +215,7 @@ Thisisamulti-linenewlineindented  /string.Random number: 0.xxxxxxxxxxxxxxxx.
 */
 ```
 
-## Tags on Regular Strings
+### Tags on Regular Strings
 If needed, you can always use any tag without an actual template string.
 Supply a string or array of strings as an argument to the function.
 ```js
@@ -220,6 +225,10 @@ Hello,
 World!
 */
 ```
+
+### TypeScript Usage
+usefulTags v1.1.0 and later ship TypeScript type defenitions by default. They should be automatically resolved when used in Node.js.
+For Deno, the instructions in [Importing/Deno](#deno) detail how to import with type defenitions.
 
 ## License
 usefulTags is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
