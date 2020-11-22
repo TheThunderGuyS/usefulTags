@@ -1,22 +1,22 @@
 "use strict";
 //Manage types (return string, add together array)
-function manageTypes(strings, ...values) {
-    if (typeof strings === "string") return strings;
-    else if (Array.isArray(strings)) {
+function manageTypes(templateString, ...literals) {
+    if (typeof templateString === "string") return templateString;
+    else if (Array.isArray(templateString)) {
         let string = "";
-        strings.forEach((str, i) => {
-            string += str + (values[i] || "");
+        templateString.forEach((a, i) => {
+            string += a + (literals[i] || "");
         });
         return string;
     } else {
         throw new TypeError(
-            `Parameter "strings" must be either a string or array. Got type "${typeof strings}" instead.`
+            `Parameter "templateString" must be either a string or array. Got type "${typeof templateString}" instead.`
         );
     }
 }
 
-export function stripIndent(strings, ...values) {
-    const string = manageTypes(strings, ...values);
+export function stripIndent(templateString, ...literals) {
+    const string = manageTypes(templateString, ...literals);
 
     const indents = string
         .match(/^\s*/gm) //Find whitespace at the beginning of lines
@@ -27,16 +27,16 @@ export function stripIndent(strings, ...values) {
         .replace(/^\n/, ""); //Trim the first newline
 }
 
-export function stripAllIndents(strings, ...values) {
-    const string = manageTypes(strings, ...values);
+export function stripAllIndents(templateString, ...literals) {
+    const string = manageTypes(templateString, ...literals);
 
     return string
         .replace(/^[ \t]+/gm, "") //Trim the spaces
         .replace(/^\n/, ""); //Trim the first newline
 }
 
-export function oneLine(strings, ...values) {
-    const string = manageTypes(strings, ...values);
+export function oneLine(templateString, ...literals) {
+    const string = manageTypes(templateString, ...literals);
 
     return string
         .replace(/^\s+/gm, " ") //Trim all excess whitespace, replacing it with one space
@@ -44,8 +44,8 @@ export function oneLine(strings, ...values) {
         .replace(/\n/g, ""); //Trim all newlines
 }
 
-export function oneLineConcatenate(strings, ...values) {
-    const string = manageTypes(strings, ...values);
+export function oneLineConcatenate(templateString, ...literals) {
+    const string = manageTypes(templateString, ...literals);
 
     return string
         .replace(/^\s+/gm, "") //Trim all excess whitespace

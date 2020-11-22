@@ -47,7 +47,7 @@ World!
 - Any Deno version
 - Any other environment supporting ES5 (most browsers)
 
-usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, script tags, etc.) thanks to [UMD](https://github.com/umdjs/umd).
+usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, Script Tags, etc.) thanks to [UMD](https://github.com/umdjs/umd).
 
 usefulTags works with transpilers like TypeScript and Babel, so you can write template literals in ES2015 and transform it to ES5.
 ### Directions
@@ -59,11 +59,12 @@ For URL based loaders and browsers, see [importing](#importing) instead.
 
 ---
 ## Usage
-Syntax:
-```js
-stripIndent`{templateStringArray}`;
-stripIndent({string || Array});
-```
+The syntax is straightforward. All of the functions are used as template tags which automatically take the string as an argument. No more arguments get parsed.
+
+When used as a regular function, either a string or array of any value is accepted.
+
+A string is returned on success, and a `TypeError` is retruned when the provided arguments are an invalid type.
+
 See [available tags](#available-tags) for usage examples.
 ### Importing
 See importable functions at [available tags](#available-tags).
