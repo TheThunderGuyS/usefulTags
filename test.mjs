@@ -5,7 +5,6 @@ import {
     oneLine,
     oneLineConcatenate
 } from "./usefulTags.mjs";
-
 {
     {
         const single = stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
