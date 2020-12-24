@@ -3,6 +3,8 @@
   "version": "1.1.1",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "dist/usefulTags.js",
+  "browser": "dist/usefultags.js",
+  "unpkg": "dist/usefultags.js",
   "module": "usefulTags.mjs",
   "files": [
     "usefulTags.mjs",
@@ -31,7 +33,11 @@
   "keywords": [
     "es6",
     "es2015",
-    "tagged-template-literals"
+    "tagged-template-literals",
+    "template-literals",
+    "template-string",
+    "template-strings",
+    "indentation"
   ],
   "author": "TheThunderGuyS",
   "license": "MIT",
@@ -40,15 +46,14 @@
   },
   "homepage": "https://github.com/TheThunderGuyS/usefulTags#readme",
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.7",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "babel-eslint": "^10.1.0",
     "babel-preset-minify": "^0.5.1",
-    "eslint": "^7.14.0",
+    "eslint": "^7.16.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.2.0",
-    "requirejs": "^2.3.6"
+    "eslint-plugin-prettier": "^3.3.0",
+    "prettier": "^2.2.1"
   }
 }

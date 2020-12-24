@@ -2,7 +2,7 @@
 <p align="center">A tiny JavaScript library incorporating some useful template tag functions.</p>
 
 ---
-![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
+![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release: 1.x.x](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor: A+](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
 
 usefulTags is a compact JavaScript library that adds a handful of commonly used and helpful template tags.
 It aims to be small, simple and practical by adding 4 template tags with no frills.
@@ -16,11 +16,11 @@ import {stripIndent} from "usefultags";
 
 stripIndent`
     Hello,
-    World!`;
+      World!`;
 
 /*Output (has no extra indents):
 Hello,
-World!
+  World!
 */
 ```
 
@@ -44,13 +44,13 @@ World!
 
 ## Installation
 ### Requirements
-- Any Node.js / iojs version
-- Any Deno version
-- Any other environment supporting ES5 (most browsers)
+- Any version of Node.js / iojs
+- Any version of Deno
+- Any other environment supporting ES5 (almost all browsers today)
 
 usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, Script Tags, etc.) thanks to [UMD](https://github.com/umdjs/umd).
 
-usefulTags works with transpilers like TypeScript and Babel, so you can write template literals in ES2015 and transform it to ES5.
+usefulTags works with transpilers like TypeScript and Babel, so you can write template literals in modern ES2015 syntax and transform it to ES5.
 ### Directions
 Install with NPM:
 ```
