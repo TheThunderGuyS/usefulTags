@@ -5,20 +5,19 @@
 ![code size: < 10kb](https://img.shields.io/github/languages/code-size/thethunderguys/usefulTags) ![license: MIT](https://img.shields.io/github/license/thethunderguys/usefulTags?color=orange) ![release: 1.x.x](https://img.shields.io/github/v/release/thethunderguys/usefulTags?sort=semver&color=brightgreen) [![codefactor: A+](https://img.shields.io/codefactor/grade/github/thethunderguys/usefulTags/trunk?label=codefactor&logo=codefactor)](https://www.codefactor.io/repository/github/thethunderguys/usefultags) [![code style: prettier](https://img.shields.io/badge/code%20style-prettier-ff69b4?logo=prettier&logoColor=informational)](https://github.com/prettier/prettier)
 
 usefulTags is a compact JavaScript library that adds a handful of commonly used and helpful template tags.
-It aims to be small, simple and practical by adding 4 template tags with no frills.
+It aims to be small, simple and practical by adding nothing but 4 template tags.
 
 By default, template strings preserve all newlines and indents, which can be irritating and make source code look awful.
 usefulTags' primary purpose is to resolve this issue in the vast majority of use cases, with 4 tags for managing newlines and indents.
 
-## Example
 ```js
 import {stripIndent} from "usefultags";
 
 stripIndent`
     Hello,
       World!`;
-
-/*Output (has no extra indents):
+/*
+Output (has no extra indents):
 Hello,
   World!
 */
@@ -46,7 +45,7 @@ Hello,
 ### Requirements
 - Any version of Node.js / iojs
 - Any version of Deno
-- Any other environment supporting ES5 (almost all browsers today)
+- Any other environment supporting ES5
 
 usefulTags supports the vast majority of module loaders (CommonJS, ESModules, RequireJS, Script Tags, etc.) thanks to [UMD](https://github.com/umdjs/umd).
 
@@ -101,15 +100,15 @@ requirejs(["https://unpkg.com/usefultags@ver"], (usefulTags) => {
 ```
 ```js
 //ESModule loader (again, ensure you replace @ver with a version tag)
-//Remember that the ESModule version is located in the /usefulTags.mjs path
-import {stripIndent} from "https://unpkg.com/usefultags@ver/usefulTags.mjs";
+//Remember that the ESModule version is located in the /dist/usefulTags.mjs path
+import {stripIndent} from "https://unpkg.com/usefultags@ver/dist/usefulTags.mjs";
 ```
 
 #### Deno
 ```js
 //Ensure you replace @ver with a version tag
 //This will import the module with TypeScript type defenitions (v1.1.0 and later)
-//For regular JavaScript you should do a more traditional import like the one with Node.js
+//For regular JavaScript you should do a more traditional import like Node.js
 import * as usefulTags from "https://deno.land/x/usefultags@ver/usefulTags.mjs";
 import * as _usefulTags from "https://deno.land/x/usefultags@ver/usefulTags.d.ts";
 const {stripIndent} = usefulTags as typeof _usefulTags;
@@ -148,7 +147,7 @@ Random number: 0.xxxxxxxxxxxxxxxx.
 
 #### `stripAllIndents`
 Remove *all* indentation from each line in a multi-line string
-(useful deep in callbacks/conditionals where additional indents are a generated mistake)
+(useful deep in callbacks/conditionals where additional indents can be a mistake)
 ```js
 const line = stripAllIndents`This
     is
@@ -216,18 +215,18 @@ Thisisamulti-linenewlineindented  /string.Random number: 0.xxxxxxxxxxxxxxxx.
 ```
 
 ### Tags on Regular Strings
-If needed, you can always use any tag without an actual template string.
+If needed, you can always use a template tag without an actual template string.
 Supply a string or array of strings as an argument to the function.
 ```js
-stripIndent("    Hello,\n    World!");
+stripIndent("    Hello,\n     World!");
 /*Output:
 Hello,
-World!
+ World!
 */
 ```
 
 ### TypeScript Usage
-usefulTags v1.1.0 and later ship TypeScript type defenitions by default. They should be automatically resolved when used in Node.js.
+usefulTags v1.1.0 and later ship with TypeScript type defenitions by default. They should automatically be loaded when used in Node.js.
 For Deno, the instructions in [Importing/Deno](#deno) detail how to import with type defenitions.
 
 ## License

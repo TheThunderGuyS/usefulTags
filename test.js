@@ -70,4 +70,4 @@ const {
     }
 }
 
-console.log("Tests complete. Scroll back to check over output.");
+console.log("CommonJS test complete. Scroll back to check over output.");

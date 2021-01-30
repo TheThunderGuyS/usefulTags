@@ -1,19 +1,18 @@
 {
   "name": "usefultags",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A tiny JavaScript library incorporating some useful template tag functions.",
   "main": "dist/usefulTags.js",
-  "browser": "dist/usefultags.js",
-  "unpkg": "dist/usefultags.js",
-  "module": "usefulTags.mjs",
+  "browser": "dist/usefulTags.js",
+  "unpkg": "dist/usefulTags.js",
+  "module": "dist/usefulTags.mjs",
   "files": [
-    "usefulTags.mjs",
-    "usefulTags.d.ts"
+    "dist/*"
   ],
-  "types": "usefulTags.d.ts",
+  "types": "dist/usefulTags.d.ts",
   "scripts": {
-    "test": "node test",
-    "build": "npx babel usefulTags.mjs --out-file ./dist/usefulTags.js"
+    "test": "node test.js && node test.mjs",
+    "build": "npx babel usefulTags.mjs --out-file ./dist/usefulTags.js && npx ncp ./usefulTags.mjs ./dist/usefulTags.mjs && npx ncp ./usefulTags.d.ts ./dist/usefulTags.d.ts"
   },
   "engines": {
     "node": ">=0.2",
@@ -54,6 +53,7 @@
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.3.0",
+    "ncp": "^2.0.0",
     "prettier": "^2.2.1"
   }
 }

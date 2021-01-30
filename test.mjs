@@ -3,7 +3,7 @@ import {
     stripAllIndents,
     oneLine,
     oneLineConcatenate
-} from "./usefulTags.mjs";
+} from "./dist/usefulTags.mjs";
 {
     {
         const single = stripIndent`    This is ${"a"} single-line string. Random number: ${Math.random()}.`;
@@ -69,4 +69,4 @@ import {
     }
 }
 
-console.log("Tests complete. Scroll back to check over output.");
+console.log("ESModule test complete. Scroll back to check over output.");
